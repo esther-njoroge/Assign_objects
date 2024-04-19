@@ -8,13 +8,14 @@ const people =[
 function arrObjects(){
      newarr =[]
     people.forEach(item => {
-        if(item[age]>=18){
+        if(item['age']>=18){
             newarr.push(item)
         }
     })
+    console.log(newarr)
 
 }
-console.log(arrObjects(newarr))
+arrObjects()
 
 
 
@@ -44,16 +45,17 @@ const students= [
     {name: 'Jil', scores: [85,90,84]},
 ];
 
-function averageMarks(marks){
-    const score = (marks)=> {
-        return marks.reduce((total,marks)=> total+marks,0)/marks.length;
+function averageMarks(){
+    const score = (total)=> {
+        return total.reduce((addition,total)=> addition+total,0)/total.length;
     }
     const answer = students.filter(students =>
-        averageMarks(students.marks)>=85)
+        score(students.total)>=85)
         const names =answer.map(students=>students.name);
-        console.log(names)
-}
-averageMarks(marks)
+        console.log(names);
+};
+
+// averageMarks(students)
 
 // NO4
 const car = {
